@@ -34,7 +34,6 @@ nav {
 .left-side {
   display: flex;
   align-items: center;
-  margin-left: 10px;
 }
 
 .logo-container img {
@@ -101,7 +100,6 @@ nav {
     align-items: center;
     width: 100%;
     padding: 30px;
-
     input {
       padding: 1.57rem 1.2rem;
       width: 325px;
@@ -149,7 +147,8 @@ nav {
     }
   }
   .loading {
-    width: 50%;
+    height: 100vh;
+    width: 100%;
     background-color: #000000;
   }
 }
@@ -162,13 +161,13 @@ nav {
 }
 
 .nav-links a {
-  color: #d7d0d0;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .nav-links a:hover {
   text-decoration: none;
-  color: #ffffff;
+  color: #d7d0d0;
 }
 
 .right-side {
@@ -341,12 +340,17 @@ button.sign-up {
   outline: none;
   border: none;
   line-height: 1.15;
+  color: white;
   box-shadow: 0px 10px 20px -18px;
   font-size: 18px;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid white;
 }
 
 .inputsp:focus {
   border-radius: 4px 4px 2px 2px;
+  border: 2px solid white;
 }
 
 .inputsp:hover {
@@ -667,14 +671,22 @@ img {
 .text {
   font-size: 0.6rem;
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .text {
     font-size: 0.8rem;
+  }
+  .loading {
+    height: 100vh;
   }
 }
 @media (min-width: 1024px) {
   .text {
     font-size: 1rem;
+  }
+}
+@media (min-width: 10px) and (max-width: 767px) {
+  .loading {
+    display: none;
   }
 }
 .text--bold {
@@ -1009,7 +1021,7 @@ footer {
 }
 
 .signin {
-  background-image: url("https://www.bhmpics.com/downloads/netflix-backgrounds-/36.netflix-background.jpg");
+  background-image: url("https://thefatork.store/cdn/shop/articles/netflix.jpg?v=1669877376");
   height: 90vh;
   position: relative;
   display: flex;
@@ -1166,4 +1178,159 @@ form .form-help :where(label, a) {
 .movies-container{
   width: 100%;
   height: 100vh;
+}
+/* Your existing styles can go here */
+
+/* Hamburger Menu Styles */
+.mobile-menu-icon {
+  display: none; /* Initially hide for larger screens */
+  cursor: pointer;
+  z-index: 3; /* Ensure it's above other content */
+}
+
+.mobile-menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background-color: #000000; /* Or any other color you prefer */
+  overflow-x: hidden;
+  padding-top: 60px; /* Space for the close icon */
+  transition: transform 0.3s ease-out;
+  transform: translateX(-100%); /* Initially off-screen */
+  z-index: 2; /* Ensure it's above other content */
+}
+
+.mobile-menu a {
+  margin-left: 15px;
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.mobile-menu a:hover {
+  background-color: #000000; /* Hover color */
+}
+
+.close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  z-index: 4; /* Ensure it's above other content */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide the regular nav links */
+  }
+
+  .mobile-menu-icon {
+    display: block; /* Display the hamburger menu icon */
+  }
+
+  /* Show the mobile menu when it's open */
+  .mobile-menu {
+    transform: translateX(0); /* Slide in from left when open */
+  }
+}
+/* Your existing styles can go here */
+
+/* Flexbox for left side alignment */
+.left-side {
+  display: flex;
+  align-items: center; /* Vertically align items */
+}
+
+/* Hamburger Menu Styles */
+.mobile-menu-icon {
+  display: none; /* Initially hide for larger screens */
+  cursor: pointer;
+  order: 1; /* Ensure it's first on smaller screens */
+}
+
+.mobile-menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+/* Logo and Navigation Links for larger screens */
+.logo-container2,
+.nav-links {
+  order: 2; /* Set the order for larger screens */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide the regular nav links on smaller screens */
+  }
+
+  .mobile-menu-icon {
+    display: flex; /* Display the hamburger menu icon on smaller screens */
+  }
+
+  /* Show the mobile menu when it's open */
+  .mobile-menu {
+    transform: translateX(0); /* Slide in from left when open */
+  }
+}
+/* Your existing styles can go here */
+
+/* Flexbox for left side alignment */
+.left-side {
+  display: flex;
+  align-items: center; /* Vertically align items */
+}
+
+/* Hamburger Menu Styles */
+.mobile-menu-icon {
+  display: none; /* Initially hide for larger screens */
+  cursor: pointer;
+  order: 1; /* Ensure it's first on smaller screens */
+}
+
+.mobile-menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px;
+}
+
+/* Logo and Navigation Links for larger screens */
+.logo-container2,
+.nav-links {
+  order: 2; /* Set the order for larger screens */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide the regular nav links on smaller screens */
+  }
+
+  .mobile-menu-icon {
+    display: flex;
+    flex-direction: column; /* Display the hamburger menu icon on smaller screens */
+  }
+
+  /* Show the mobile menu when it's open */
+  .mobile-menu {
+    transform: translateX(0); /* Slide in from left when open */
+  }
 }
